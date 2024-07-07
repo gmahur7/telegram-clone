@@ -1,6 +1,8 @@
 import './App.css'
 import { Container, Grid, Paper, Typography, List, ListItem, ListItemText, Box, TextField, Button, Input, InputBase, IconButton, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import MenuIcon from '@mui/icons-material/Menu';
 import backgroundChat from './assets/background-chat.png'
 import { useEffect, useState } from 'react';
@@ -8,6 +10,8 @@ import Contacts from './components/Contacts';
 import axios from 'axios';
 
 function App() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const [display, setDisplay] = useState(false)
   const [contacts, setContacts] = useState([])
@@ -30,20 +34,20 @@ function App() {
       maxWidth={false}
       style={{ height: '100vh', width: '100%' }}>
       <Grid container spacing={0} style={{ height: '100%' }}>
-        <Grid item xs={3} sx={{
+        <Grid item xs={!isMobile?3:12} sx={{
           borderRadius: '20px',
-          backgroundColor: 'rgb(23,23,23)'
+          backgroundColor: 'rgb(23,23,23)',
         }}>
           <Paper style={{ height: '100%', overflowY: 'auto', paddingTop: '10px' }} sx={{
             backgroundColor: 'rgb(33, 33, 33)',
           }}>
             <Grid container spacing={2} justifyContent="space-between" alignItems="center" sx={{
-              padding: '0px 20px'
+              padding: isMobile?'0px 50px':'0px 20px'
             }}>
-              <Grid item xs={2}>
+              <Grid item xs={isMobile?3:2}>
                 <MenuIcon sx={{ color: '#AAAAAA' }} />
               </Grid>
-              <Grid item xs={10}>
+              <Grid item xs={isMobile?9:10} sx={{textAlign:"end"}}>
                 <TextField placeholder='Search' variant='outlined' InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -83,7 +87,7 @@ function App() {
                 />
               </Grid>
             </Grid>
-            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'rgb(23,23,23)',color:'#fff' }}>
+            <List sx={{ width: '100%', bgcolor: 'rgb(33,33,33)',color:'#fff' }}>
               { contacts.map&&
                 contacts.map((item,index)=>{
                   return(
@@ -94,7 +98,7 @@ function App() {
             </List>
           </Paper>
         </Grid>
-        <Grid item xs={9}>
+        <Grid item xs={!isMobile?9:0}>
           <Paper style={{ height: '100%', display: 'flex', flexDirection: 'column', backgroundColor: 'rgb(45,12,82)' }} sx={{
             backgroundImage: `url(${backgroundChat})`, // Replace with your image URL
             backgroundSize: 'contain',
