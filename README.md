@@ -5,7 +5,8 @@
   <h1 align="center">TELEGRAM-CLONE</h1>
 </p>
 <p align="center">
-  <a style={{text-decoration:"none"}} href="https://telegram-clone-six.vercel.app/">Project Url</a>	
+  <a href="https://telegram-clone-six.vercel.app/" style="text-decoration: none;">Click Me </a>
+  <span style="font-size:bold">to go to Telegram-Clone</span>	
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/gmahur7/telegram-clone?style=flat&color=0080ff" alt="license">
