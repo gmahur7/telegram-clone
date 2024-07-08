@@ -3,6 +3,7 @@
 </p>
 <p align="center">
   <h1 align="center">TELEGRAM-CLONE</h1>
+  <a href="https://telegram-clone-six.vercel.app/">Project Url</a>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/gmahur7/telegram-clone?style=flat&color=0080ff" alt="license">
@@ -43,13 +44,12 @@
 
 ## 📝 Overview
 
-The Telegram Clone project aims to replicate the essential features of the popular messaging app, Telegram. The application allows users to send and receive messages, view message history, and manage contacts, providing a seamless and user-friendly chat experience.
+The Telegram Clone project aims to replicate the essential features of the popular messaging app, Telegram. The application allows users to view message history, and manage contacts, providing a seamless and user-friendly chat experience.
 
 ---
 
 ## ✨ Features
 
-- **Real-time Messaging:** Send and receive messages instantly.
 - **Contact Management:** Easily manage and search your contacts.
 - **Message History:** View chat history with timestamps.
 - **Responsive Design:** Works across various devices and screen sizes.
