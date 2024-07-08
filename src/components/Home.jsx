@@ -56,12 +56,14 @@ const Home = () => {
     <Container
       disableGutters
       maxWidth={false}
-      style={{ height: '100vh', width: '100%' }}>
+      style={{ maxHeight: '100vh', width: '100%' }}>
       <Grid container spacing={0} style={{ height: '100%' }}>
         <Grid item xs={isMobile ? (checkEmpty() ? 12 : 0) : 3} sx={{
-          borderRadius: '20px',
+          borderRadius: '20px 0 0 20px',
           backgroundColor: 'rgb(23,23,23)',
-          display: isMobile && !checkEmpty() ? 'none' : 'block'
+          display: isMobile && !checkEmpty() ? 'none' : 'block',
+          maxHeight:"100vh",
+          overflowY:"scroll"
         }}>
           <Paper style={{ height: '100%', overflowY: 'auto', paddingTop: '10px' }} sx={{
             backgroundColor: 'rgb(33, 33, 33)',
@@ -112,7 +114,7 @@ const Home = () => {
                 />
               </Grid>
             </Grid>
-            <List sx={{ width: '100%', bgcolor: 'rgb(33,33,3  3)', color: '#fff' }}>
+            <List sx={{ width: '100%', bgcolor: 'rgb(33,33,3  3)', color: '#fff',overflowY:"scroll" }}>
               {contacts.map &&
                 contacts.map((item, index) => {
                   return (
@@ -124,7 +126,7 @@ const Home = () => {
           </Paper>
         </Grid>
         <Grid item xs={isMobile ? (checkEmpty() ? 0 : 12) : 9} sx={{
-          display: isMobile && checkEmpty() ? 'none' : 'block'
+          display: isMobile && checkEmpty() ? 'none' : 'block',
         }}>
           <Chats data={selectedChat} backgroundChat={backgroundChat} display={display} isMobile={isMobile} clearChats={clearChats} />
         </Grid>
